@@ -12,8 +12,7 @@ public class ShorterController {
     private final UrlShroterService urlShroterService;
 
     @PostMapping("/urlShorter")
-    public String urlShorter(@NonNull @RequestBody UrlShorterRequestDto requestDto){
-        System.out.println();
+    public String urlShorter(@RequestBody UrlShorterRequestDto requestDto){
         return urlShroterService.makeShorter(requestDto);
     }
 }
