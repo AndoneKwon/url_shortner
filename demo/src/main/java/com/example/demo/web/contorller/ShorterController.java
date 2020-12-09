@@ -1,12 +1,10 @@
-package web.contorller;
+package com.example.demo.web.contorller;
 
+import com.example.demo.web.dto.UrlShorterRequestDto;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import service.UrlShroterService;
-import web.dto.UrlShorterRequestDto;
+import com.example.demo.service.UrlShroterService;
 
 @RestController
 @RequiredArgsConstructor

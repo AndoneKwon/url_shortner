@@ -1,8 +1,7 @@
-package service;
+package com.example.demo.service;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-import web.dto.UrlShorterRequestDto;
+import com.example.demo.web.dto.UrlShorterRequestDto;
 
 @Service
 public class UrlShroterService {
