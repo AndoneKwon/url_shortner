@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" width="300"  src="./assets/logo.png">
-    <MainPage msg="Welcome to Url Shortner"/>
+    <Menu/>
+    <a href="/"><img alt="Vue logo" width="300"  src="./assets/logo.png"></a>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import MainPage from './components/MainPage.vue'
-
+import Menu from "./components/Menu.vue"
 export default {
   name: 'App',
   components: {
-    MainPage
+    Menu
   }
 }
 </script>
