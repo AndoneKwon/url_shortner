@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -13,7 +14,7 @@ import lombok.Setter;
 public class UrlShorterRequestDto {
     private String url;
 
-    public Url toEntity(){
+    public Url toEntity() {
         return Url.builder()
                 .originalUrl(url)
                 .build();
