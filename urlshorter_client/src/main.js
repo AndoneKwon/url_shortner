@@ -5,6 +5,7 @@ import ErrorPage from "./components/ErrorPage.vue"
 import MainPage from "./components/MainPage.vue"
 import Login from "./components/Login.vue"
 import Join from "./components/Join.vue"
+import MyPage from "./components/MyPage"
 
 Vue.config.productionTip = false
 
@@ -30,6 +31,11 @@ const routes=[
     path:"/join",
     name:"join Page",
     component: Join,
+  },
+  {
+    path:"/myInfo",
+    name:"myinfo",
+    component: MyPage,
   }
 ]
 

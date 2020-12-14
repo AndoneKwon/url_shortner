@@ -1,6 +1,7 @@
 package com.example.demo.web.contorller;
 
 import com.example.demo.web.dto.UrlShorterRequestDto;
+import com.sun.istack.Nullable;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,9 +21,9 @@ public class ShorterController {
     private final UrlShroterService urlShroterService;
     Logger logger = LoggerFactory.getLogger(this.getClass());
     @PostMapping("/urlShorter")
-    public String urlShorter(@NonNull @RequestBody UrlShorterRequestDto requestDto){
+    public String urlShorter(@Nullable @RequestHeader String token, @NonNull @RequestBody UrlShorterRequestDto requestDto){
         logger.info(requestDto.getUrl());
-        return urlShroterService.makeShorter(requestDto);
+        return urlShroterService.makeShorter(requestDto,token);
     }
     @GetMapping("/{shortUrl}")
     public void redirection(@PathVariable("shortUrl") String shortUrl, HttpServletResponse httpServletResponse) throws IOException {

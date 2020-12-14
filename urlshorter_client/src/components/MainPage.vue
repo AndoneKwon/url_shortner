@@ -38,7 +38,7 @@ export default {
                 url:this.url
               },
               headers: {
-                "authorization":localStorage.getItem('authorization')
+                "token":localStorage.getItem('token')
               },
           })
           .then((res)=>{

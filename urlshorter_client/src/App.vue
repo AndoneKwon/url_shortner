@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+  <div>로고를 누르시면 홈으로 이동합니다</div>
     <Menu/>
     <a href="/"><img alt="Vue logo" width="300"  src="./assets/logo.png"></a>
     <router-view></router-view>

@@ -2,12 +2,13 @@
     <div>
        <div> 
             <form>
-                Id : <input type="text"  name="id" id="id" placeholder="Id">
+                Id : <input type="text" v-model="id" name="id" id="id" placeholder="Id">
                 <br>
-                Password : <input type="password"  name="password" id="password" placeholder="Password">
+                Password : <input type="password" v-model="password" name="password" id="password" placeholder="Password">
             </form>
             <br>
         <button @click="submit" value="submit">submit</button></div>
+        <div v-if="this.message!=null">{{message}}</div>
     </div>
 </template>
 <style>
@@ -30,13 +31,19 @@ export default {
               method:"POST",
               url:"http://localhost:8001/login",
               data:{
-                id:this.url,
+                uid:this.id,
                 password:this.password
               },
           })
           .then((res)=>{
-              console.log(res.data);
-              this.returnUrl="http://localhost:8001/"+res.data;
+              console.log(res);
+              if(res.data.code==201){
+                this.message=res.data.message;
+              }else{
+                localStorage.setItem("token",res.data.token);
+                localStorage.setItem("refreshToken",res.data.refreshToken);
+                window.location.href="/"
+              }
           })
           .catch({
               function (error) {
@@ -47,9 +54,7 @@ export default {
   },
   data() {
       return {
-          url:null,
-          validate:false,
-          returnUrl:null
+          message:null
       }
   },
 }
